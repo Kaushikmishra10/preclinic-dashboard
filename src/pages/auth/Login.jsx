@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BsEye, BsEyeSlash, BsEnvelope, BsLock } from "react-icons/bs";
 import logo from "../../assets/images/preclinic-icon.svg";
 import "../../styles/theme.scss";
-import "../../styles/auth.css";
+import "../../styles/Auth.css";
 
 const Login = ({ onLogin, authError, onNavigateSignup }) => {
   const [email,    setEmail]    = useState("");
