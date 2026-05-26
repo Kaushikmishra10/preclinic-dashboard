@@ -1,0 +1,98 @@
+/* =============================================
+   appointmentStatistics.css
+   ============================================= */
+
+/* Chart wrapper */
+.appt-chart-wrap {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+/* Victory SVG full width */
+.appt-chart-wrap > div {
+  width: 100% !important;
+}
+
+.appt-chart-wrap svg {
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* Legend row */
+.appt-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.appt-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-family: var(--font);
+}
+
+.appt-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+/* ── Responsive ──────────────────────────────── */
+
+/* Appointment item min height */
+.appt-item {
+  min-height: 72px;
+  padding: 12px 4px;
+  border-bottom: 1.5px solid var(--sidebar-border);
+}
+
+/* Calendar responsive */
+.appt-calendar-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.visit-img{
+    width: 100%;
+    height: 100%;
+  }
+
+@media (max-width: 575.98px){
+  .visit-img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+
+}
+
+/* 300px tak koi cheez bahar nahi jaayegi */
+@media (max-width: 400px) {
+  .appt-chart-wrap svg {
+    min-width: unset !important;
+  }
+
+  .appt-legend {
+    gap: 12px;
+  }
+
+  .appt-legend-item {
+    font-size: 10px;
+  }
+
+  .appt-stat-boxes {
+    flex-wrap: wrap !important;
+  }
+  .appt-stat-boxes > div {
+    min-width: calc(50% - 8px) !important;
+  }
+}

@@ -1,0 +1,29 @@
+/* =============================================
+   dashboardSection2.css
+   ============================================= */
+
+/* Donut chart wrapper */
+.donut-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donut-wrap svg {
+  overflow: visible;
+}
+
+/* Responsive — below lg full width */
+@media (max-width: 991.98px) {
+  .donut-wrap svg {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 400px) {
+  .donut-wrap svg {
+    width: 140px;
+    height: 140px;
+  }
+}

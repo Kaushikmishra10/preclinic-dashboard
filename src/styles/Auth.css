@@ -1,0 +1,194 @@
+/* =============================================
+   auth.css — Login & Signup pages
+   ============================================= */
+
+/* Full page background */
+.auth-bg {
+  background: #f4f7fb;
+  font-family: var(--font);
+}
+
+/* Card */
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 32px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 28px 20px;
+  }
+}
+
+/* Field label */
+.auth-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  font-family: var(--font);
+}
+
+/* Input wrapper */
+.auth-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Icon inside input */
+.auth-input-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-muted-clr);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* Input field */
+.auth-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 40px 0 36px;
+  font-size: 13px;
+  font-family: var(--font);
+  border: 1.5px solid var(--sidebar-border);
+  border-radius: 10px;
+  background: var(--badge-bg);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.auth-input::placeholder {
+  color: var(--text-muted-clr);
+}
+
+.auth-input:focus {
+  border-color: #2E37A4;
+  background: #fff;
+}
+
+/* Eye toggle button */
+.auth-eye-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted-clr);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+}
+
+.auth-eye-btn:hover {
+  color: var(--text-primary);
+}
+
+/* Checkbox */
+.auth-checkbox {
+  width: 15px;
+  height: 15px;
+  accent-color: #2E37A4;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Submit button */
+.auth-submit-btn {
+  height: 44px;
+  background: #2E37A4;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.auth-submit-btn:hover:not(:disabled) {
+  background: #1558b0;
+}
+
+.auth-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Divider */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted-clr);
+  font-size: 12px;
+  font-family: var(--font);
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--sidebar-border);
+}
+
+/* Social buttons */
+.auth-social-btn {
+  height: 40px;
+  border: 1.5px solid var(--sidebar-border);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 13px;
+  font-family: var(--font);
+  color: var(--text-primary);
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.auth-social-btn:hover {
+  background: var(--badge-bg);
+  border-color: #2E37A4;
+}
+
+/* Link */
+.auth-link {
+  color: #2E37A4;
+  text-decoration: none;
+  font-family: var(--font);
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+  color: #1558b0;
+}
+
+/* Remember me label */
+.auth-remember {
+  cursor: pointer;
+  margin: 0;
+}
+
+/* Error state input */
+.auth-input-error {
+  border-color: #ef4444 !important;
+  background: #fff5f5 !important;
+}

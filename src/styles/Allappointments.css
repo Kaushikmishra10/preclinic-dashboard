@@ -1,0 +1,101 @@
+/* =============================================
+   allAppointments.css
+   ============================================= */
+
+/* Table wrapper — horizontal scroll on small screens */
+.appt-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1.5px solid var(--sidebar-border);
+  border-radius: 10px;
+}
+
+/* Table */
+.appt-table {
+  border-collapse: collapse;
+  min-width: 680px;
+  font-family: var(--font);
+}
+
+/* Header */
+.appt-table thead tr {
+  border-bottom: 1.5px solid var(--sidebar-border);
+}
+
+.appt-table thead th {
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: transparent;
+  white-space: nowrap;
+}
+
+/* Body rows */
+.appt-table tbody tr {
+  border-bottom: 1.5px solid var(--sidebar-border);
+  transition: background 0.15s;
+}
+
+.appt-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.appt-table tbody tr:hover {
+  background: var(--menu-hover-bg);
+}
+
+.appt-table tbody td {
+  padding: 14px 16px;
+  vertical-align: middle;
+}
+
+/* Avatar */
+.appt-avatar {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+/* Name + sub */
+.appt-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.appt-sub {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* Date */
+.appt-datetime {
+  font-size: 13px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* Mode */
+.appt-mode {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Status badge — outlined pill */
+.appt-status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1.5px solid;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  font-family: var(--font);
+  background: transparent;
+}
