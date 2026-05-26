@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../assets/images/preclinic-icon.svg";
-import icon from "../assets/images/Lasvegas.svg";
+import icon from "../assets/images/lasvegas.svg";
 import {
   BsArrowLeft,
   BsArrowDownUp,
