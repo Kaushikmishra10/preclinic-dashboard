@@ -1,0 +1,330 @@
+/* =============================================
+   theme.scss
+   1. Custom variables
+   2. Bootstrap
+   3. Sidebar-specific custom styles
+      (sirf woh jo Bootstrap cover nahi karta)
+   ============================================= */
+
+@import "./theme/variable";
+@import "bootstrap/scss/bootstrap";
+
+/* ── Google Font ── */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ─────────────────────────────────────────────
+   SIDEBAR CUSTOM STYLES
+   (Bootstrap classes se jo nahi hota woh yahan)
+   ───────────────────────────────────────────── */
+
+/* Sidebar shell */
+.sidebar {
+  background: var(--sidebar-bg) !important;
+  flex-wrap: nowrap;
+  border-right: 1.5px solid var(--sidebar-border);
+  min-height: 100vh;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+/* Section label */
+.sidebar-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-muted-clr);
+}
+
+/* ── Menu parent button ── */
+.menu-btn {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: 8px;
+  transition: background var(--transition), color var(--transition);
+
+  &:hover {
+    background: var(--menu-hover-bg);
+    color: var(--text-primary);
+  }
+
+  &.active {
+    background: var(--menu-active-bg);
+    color: var(--menu-active-clr);
+    font-weight: 600;
+  }
+}
+
+/* ── Chevron rotation ── */
+.menu-chevron {
+  width: 15px;
+  height: 15px;
+  color: #c5cdd8;
+  flex-shrink: 0;
+  transition: transform var(--transition), color var(--transition);
+
+  &.rotate {
+    transform: rotate(180deg);
+    color: var(--menu-active-clr);
+  }
+}
+
+/* ── Submenu button ── */
+.submenu-btn {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: 8px;
+  transition: background var(--transition), color var(--transition);
+
+  &:hover {
+    background: var(--menu-hover-bg);
+    color: var(--text-primary);
+  }
+
+  &.active {
+    color: var(--menu-active-clr);
+    font-weight: 600;
+
+    .sub-dot {
+      background: var(--menu-active-clr);
+    }
+  }
+}
+
+/* ── Submenu dot ── */
+.sub-dot {
+  width: 7px;
+  height: 7px;
+  min-width: 7px;
+  border-radius: 50%;
+  background: #c5cdd8;
+  display: inline-block;
+  transition: background var(--transition);
+}
+
+/* ── Upgrade card logo circle ── */
+.upgrade-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ── Dark mode toggle ── */
+.toggle-wrap {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+.toggle-track {
+  position: absolute;
+  inset: 0;
+  background: var(--toggle-off);
+  border-radius: 999px;
+  transition: background var(--transition);
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 3px;
+    top: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform var(--transition);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.toggle-wrap input:checked + .toggle-track {
+  background: var(--toggle-on);
+}
+
+.toggle-wrap input:checked + .toggle-track::before {
+  transform: translateX(18px);
+}
+
+/* ── Clinic avatar (fallback if no image) ── */
+.clinic-avatar {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2E37A4, #06AED4);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─────────────────────────────────────────────
+   HEADER CUSTOM STYLES
+   ───────────────────────────────────────────── */
+
+.header {
+  background: var(--sidebar-bg);
+  border-bottom: 1.5px solid var(--sidebar-border);
+  transition: background var(--transition), border-color var(--transition);
+}
+
+/* Search input wrapper */
+.header-search {
+  position: relative;
+  width: 220px;
+
+  .header-search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted-clr);
+    font-size: 16px;
+    pointer-events: none;
+  }
+
+  input {
+    width: 100%;
+    height: 34px;
+    padding: 0 36px 0 30px;
+    font-size: 16px;
+    border: 1.5px solid var(--sidebar-border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color var(--transition), background var(--transition);
+    font-family: var(--font);
+
+    &::placeholder { color: var(--text-muted-clr); }
+    &:focus { border-color: var(--menu-active-clr); }
+  }
+
+  .header-search-kbd {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 11px;
+    color: var(--text-muted-clr);
+    padding: 1px 5px;
+    background: var(--sidebar-bg) !important;
+  flex-wrap: nowrap;
+    font-family: var(--font);
+  }
+}
+
+/* Icon buttons in header */
+.header-icon-btn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  position: relative;
+
+  &:hover {
+    background: var(--menu-hover-bg);
+    color: var(--text-primary);
+  }
+}
+
+/* Notification badge dot */
+.header-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ef4444;
+  border: 1.5px solid var(--sidebar-bg);
+}
+
+/* Avatar */
+.header-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid var(--sidebar-border);
+}
+
+/* Header hamburger — default hidden */
+.header-hamburger {
+  display: none !important;
+}
+
+/* 992px se niche — sidebar hide hota hai, header hamburger dikhao */
+@media (max-width: 991.98px) {
+  .header-hamburger { display: flex !important; }
+}
+
+/* 756px se niche — search aur right icons bhi hide karo */
+@media (max-width: 755.98px) {
+  .header-search      { display: none !important; }
+  .header-right-icons { display: none !important; }
+}
+
+/* ── Header drawer (search + icons, 756px se niche) ── */
+.header-drawer {
+  display: none;
+  position: absolute;
+  top: 51px;
+  left: 0;
+  right: 0;
+  background: var(--sidebar-bg);
+  border-bottom: 1.5px solid var(--sidebar-border);
+  z-index: 1030;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  .header-search {
+    display: flex !important;
+    width: 100% !important;
+  }
+}
+
+.header-drawer-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1029;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 755.98px) {
+  .header-drawer         { display: block; }
+  .header-drawer-overlay { display: block; }
+}
