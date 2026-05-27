@@ -12,6 +12,7 @@ import Appointments from "../components/Appointments";
 import Departments from "../components/Departments";
 import Allappointments from "../components/Allappointments";
 import TopPatients from "../components/TopPatients";
+import Footer from "../components/Footer";
 import doctors from "../assets/images/doctors.svg";
 import appointments from "../assets/images/appointments.svg";
 import patients from "../assets/images/patients.svg";
@@ -190,6 +191,7 @@ const Dashboard = () => (
     <Departments />
     <Allappointments />
     <TopPatients/>
+    <Footer />
 
   </div>
 );
